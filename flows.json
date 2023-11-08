@@ -1,1 +1,127 @@
-[]
+[
+    {
+        "id": "58cdd9ded36bf09d",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "998e6a3f30692f03",
+        "type": "mqtt-broker",
+        "name": "thin-edge",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "node-red-flow",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e343bef726d75429",
+        "type": "inject",
+        "z": "58cdd9ded36bf09d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 350,
+        "y": 340,
+        "wires": [
+            [
+                "f26ffa9e7c4433dc"
+            ]
+        ]
+    },
+    {
+        "id": "f26ffa9e7c4433dc",
+        "type": "function",
+        "z": "58cdd9ded36bf09d",
+        "name": "function 1",
+        "func": "msg.payload = Math.floor(Math.random() * 10);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 340,
+        "wires": [
+            [
+                "3c2dccca0692fde2"
+            ]
+        ]
+    },
+    {
+        "id": "3c2dccca0692fde2",
+        "type": "template",
+        "z": "58cdd9ded36bf09d",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"myNumber\": {{payload}}\n}",
+        "output": "str",
+        "x": 940,
+        "y": 340,
+        "wires": [
+            [
+                "411c0d398bd272e0"
+            ]
+        ]
+    },
+    {
+        "id": "411c0d398bd272e0",
+        "type": "mqtt out",
+        "z": "58cdd9ded36bf09d",
+        "name": "",
+        "topic": "tedge/measurements",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "998e6a3f30692f03",
+        "x": 1340,
+        "y": 340,
+        "wires": []
+    }
+]

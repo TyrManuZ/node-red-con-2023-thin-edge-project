@@ -20,20 +20,20 @@
         "keepalive": "60",
         "cleansession": true,
         "autoUnsubscribe": true,
-        "birthTopic": "",
+        "birthTopic": "te/device/main/service/node-red-con-2023-flow/status/health",
         "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
+        "birthRetain": "true",
+        "birthPayload": "{\"status\":\"up\",\"type\":\"nodered\"}",
         "birthMsg": {},
-        "closeTopic": "",
+        "closeTopic": "tedge/health/node-red-con-2023-flow",
         "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
+        "closeRetain": "true",
+        "closePayload": "{\"status\":\"down\",\"type\":\"nodered\"}",
         "closeMsg": {},
-        "willTopic": "",
+        "willTopic": "te/device/main/service/node-red-con-2023-flow/status/health",
         "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
+        "willRetain": "true",
+        "willPayload": "{\"status\":\"down\",\"type\":\"nodered\"}",
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
@@ -123,71 +123,5 @@
         "x": 1340,
         "y": 340,
         "wires": []
-    },
-    {
-        "id": "cdcb3e95683ffe8c",
-        "type": "mqtt out",
-        "z": "58cdd9ded36bf09d",
-        "name": "",
-        "topic": "te/device/main/service/my-node-red-flow/status/health",
-        "qos": "",
-        "retain": "true",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "998e6a3f30692f03",
-        "x": 1270,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "8b5328b54f0eaf19",
-        "type": "template",
-        "z": "58cdd9ded36bf09d",
-        "name": "Health Check",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\n    \"status\": \"UP\",\n    \"type\": \"nodered\"\n}",
-        "output": "str",
-        "x": 940,
-        "y": 160,
-        "wires": [
-            [
-                "cdcb3e95683ffe8c"
-            ]
-        ]
-    },
-    {
-        "id": "37d69c8f6195905b",
-        "type": "inject",
-        "z": "58cdd9ded36bf09d",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "5",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 630,
-        "y": 160,
-        "wires": [
-            [
-                "8b5328b54f0eaf19"
-            ]
-        ]
     }
 ]

@@ -63,27 +63,7 @@
         "y": 340,
         "wires": [
             [
-                "f26ffa9e7c4433dc"
-            ]
-        ]
-    },
-    {
-        "id": "f26ffa9e7c4433dc",
-        "type": "function",
-        "z": "58cdd9ded36bf09d",
-        "name": "function 1",
-        "func": "msg.payload = Math.floor(Math.random() * 10);\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 640,
-        "y": 340,
-        "wires": [
-            [
-                "3c2dccca0692fde2"
+                "977ff015f11f0893"
             ]
         ]
     },
@@ -123,5 +103,22 @@
         "x": 1340,
         "y": 340,
         "wires": []
+    },
+    {
+        "id": "977ff015f11f0893",
+        "type": "random",
+        "z": "58cdd9ded36bf09d",
+        "name": "",
+        "low": 1,
+        "high": 10,
+        "inte": "true",
+        "property": "payload",
+        "x": 660,
+        "y": 340,
+        "wires": [
+            [
+                "3c2dccca0692fde2"
+            ]
+        ]
     }
 ]

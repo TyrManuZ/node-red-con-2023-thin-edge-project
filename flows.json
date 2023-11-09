@@ -129,7 +129,7 @@
         "type": "mqtt out",
         "z": "58cdd9ded36bf09d",
         "name": "",
-        "topic": "te/device/revpi-office/service/my-node-red-flow/status/health",
+        "topic": "te/device/main/service/my-node-red-flow/status/health",
         "qos": "",
         "retain": "true",
         "respTopic": "",
@@ -138,7 +138,7 @@
         "correl": "",
         "expiry": "",
         "broker": "998e6a3f30692f03",
-        "x": 1290,
+        "x": 1270,
         "y": 160,
         "wires": []
     },

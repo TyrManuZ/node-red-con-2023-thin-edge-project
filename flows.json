@@ -63,7 +63,8 @@
         "y": 340,
         "wires": [
             [
-                "977ff015f11f0893"
+                "977ff015f11f0893",
+                "86f5b3a8b0287129"
             ]
         ]
     },
@@ -78,8 +79,8 @@
         "syntax": "mustache",
         "template": "{\n    \"myNumber\": {{payload}}\n}",
         "output": "str",
-        "x": 940,
-        "y": 340,
+        "x": 960,
+        "y": 400,
         "wires": [
             [
                 "411c0d398bd272e0"
@@ -101,7 +102,7 @@
         "expiry": "",
         "broker": "998e6a3f30692f03",
         "x": 1340,
-        "y": 340,
+        "y": 400,
         "wires": []
     },
     {
@@ -118,6 +119,42 @@
         "wires": [
             [
                 "3c2dccca0692fde2"
+            ]
+        ]
+    },
+    {
+        "id": "0aea19ad9695d563",
+        "type": "template",
+        "z": "58cdd9ded36bf09d",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"myFloat\": {{payload}}\n}",
+        "output": "str",
+        "x": 960,
+        "y": 560,
+        "wires": [
+            [
+                "411c0d398bd272e0"
+            ]
+        ]
+    },
+    {
+        "id": "86f5b3a8b0287129",
+        "type": "random",
+        "z": "58cdd9ded36bf09d",
+        "name": "",
+        "low": "10",
+        "high": "15",
+        "inte": "false",
+        "property": "payload",
+        "x": 660,
+        "y": 500,
+        "wires": [
+            [
+                "0aea19ad9695d563"
             ]
         ]
     }

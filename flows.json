@@ -92,7 +92,7 @@
         "type": "mqtt out",
         "z": "58cdd9ded36bf09d",
         "name": "",
-        "topic": "tedge/measurements",
+        "topic": "te/device/node-red-demo///m/sim",
         "qos": "",
         "retain": "",
         "respTopic": "",
@@ -101,7 +101,7 @@
         "correl": "",
         "expiry": "",
         "broker": "998e6a3f30692f03",
-        "x": 1340,
+        "x": 1380,
         "y": 400,
         "wires": []
     },
